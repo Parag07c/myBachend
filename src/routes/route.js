@@ -107,6 +107,24 @@ router.get("/films/:filmId", function(req, res){
        //if there is no match give an error response
        res.send("The film id doesn't match any movie")
 })
+router.get("/missing",function(req,res){
+    let arra=[1,2,3,5,6,7]
+    let sum =arra.reduce((x,y)=>x+y)
+    let t =arra.length+1
+    let missing = (t*(t+1))/2 -sum
+
+    res.send("missing No. is" +missing)
+
+})
+router.get("/missingInt",function(req,res){
+    let arra=[33,34,35,37,38]
+    let sum =arra.reduce((x,y)=>x+y)
+    let t = arra.length+1
+    let missing = ((t/2) *(arra[0]+arra[t-2]))-sum
+
+    res.send("missing No. is " +missing)
+
+})
 
 module.exports = router;
 // adding this comment for no reason
